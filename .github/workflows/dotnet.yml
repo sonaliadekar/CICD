@@ -18,11 +18,11 @@ jobs:
       with:
         dotnet-version: '8.0.x'
 
-    - name: Restore dependencies
-      run: dotnet restore
+    - name: Restore
+      run: dotnet restore "./CICD Web Api/CICD Web Api.csproj"
 
-    - name: Build project
-      run: dotnet build --no-restore --configuration Release
+    - name: Build
+      run: dotnet build "./CICD Web Api/CICD Web Api.csproj" --no-restore --configuration Release
 
-    - name: Run tests
-      run: dotnet test --no-build --verbosity normal
+    - name: Test
+      run: dotnet test "./CICD Web Api/CICD Web Api.csproj" --no-build
